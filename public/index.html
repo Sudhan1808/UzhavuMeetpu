@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>UzhavuMeeeptu</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js" integrity="sha512-DkPsH9LzNzZaZjCszwKrooKwgjArJDiEjA5tTgr3YX4E6TYv93ICS8T41yFHJnnSmGpnf0Mvb5NhScYbwvhn2w==" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js" integrity="sha512-0xrMWUXzEAc+VY7k48pWd5YT6ig03p4KARKxs4Bqxb9atrcn2fV41fWs+YXTKb8lD2sbPAmZMjKENiyzM/Gagw==" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/uuid@latest/dist/umd/uuidv4.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@metamask/detect-provider@2/dist/detect-provider.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+	<script src="https://unpkg.com/@metamask/detect-provider/dist/detect-provider.min.js"></script>
+
+</head>
+<body>
+
+
+	  <div id="header-social">
+		<a href="https://t.me/UzhavuMeetpu" target="blank">
+			<img src="telegram.png" id="h-telegram">
+		</a>
+		<a href="https://instagram.com/cybermatic_customs?igshid=MTIyMzRjYmRlZg==" target="blank">
+			<img src="Insta.png" id="h-insta">
+		</a>
+		<a href="https://twitter.com/UzhavuMeetpu" target="blank">
+			<img src="twitter.png" id="h-twitter">
+		</a>
+		<a href="https://discord.gg/6cZUuRPXAQ" target="blank">
+			<img src="discord.png" id="h-discord">
+		</a>
+	</div>
+	<div id="UVM-Logo">
+		<img src="UVM_LOGO.png" class="logo-image">
+	  </div>
+
+	<div class="top-tab"></div>
+	<a href="#index"><h1 class="header-text">UzhavuMeetpu</h1></a>
+		<nav>
+		  <ul>
+			<li><a href="#home">Home</a></li>
+			<li><a href="#tokenomics" id="tokenomicsLink">Tokenomics</a></li>
+			<li><a href="#roadmap">Roadmap</a></li>
+			<li><a href="#whitepaper">Documentation</a></li>
+		  </ul>
+		  <button id="menuButton">Open Menu</button>
+		</nav>
+		<script>
+			$(document).ready(function() {
+			  // Add smooth scrolling to anchor links
+			  $('nav a[href^="#"]').on('click', function(event) {
+				event.preventDefault();
+				var target = $($(this).attr('href'));
+				$('html, body').animate({
+				  scrollTop: target.offset().top
+				}, 900);
+			
+				// Change active link on click
+				$('nav a').removeClass('active');
+				$(this).addClass('active');
+			  });
+			
+			  // Change active link on scroll
+			  $(window).on('scroll', function() {
+               var scrollPos = $(window).scrollTop();
+  				$('nav a').each(function() {
+  			  var currLink = $(this);
+  			  var refElement = $($(currLink.attr('href')));
+  				  if (refElement.position().top - 50 <= scrollPos && refElement.position().top + refElement.outerHeight() > scrollPos) {
+  				    $('nav a').removeClass('active');
+ 				     currLink.addClass('active');
+ 					   } else {
+ 					     currLink.removeClass('active');
+ 					   }
+ 			    	 });
+				});
+			});
+			</script>
+			
+	  <main>
+		<script>
+    // Check if MetaMask extension is installed
+    function isMetaMaskInstalled() {
+      return typeof window.ethereum !== 'undefined';
+    }
+
+    // Function to prompt the user to download MetaMask
+    function promptMetaMaskDownload() {
+      if (confirm("MetaMask extension is required to use this website. Do you want to download it?")) {
+        window.open("https://metamask.io/download.html", "_blank");
+      }
+    }
+
+    // On page load
+    $(document).ready(function() {
+      if (!isMetaMaskInstalled()) {
+        promptMetaMaskDownload();
+      }
+    });
+		  </script>
+		<section id="index">
+         
+		<div id="indexcont-btn">	
+			<button onclick="toggleContent(1)" class="toggle-btn"><img src="toggle-btn.png" class="togglebtn"></button>
+  			<button onclick="toggleContent(2)" class="toggle-btn"><img src="toggle-btn.png" class="togglebtn"></button>
+    		<button onclick="toggleContent(3)" class="toggle-btn"><img src="toggle-btn.png" class="togglebtn"></button>
+    		<button onclick="toggleContent(4)" class="toggle-btn"><img src="toggle-btn.png" class="togglebtn"></button>
+			<button onclick="toggleContent(5)" class="toggle-btn"><img src="toggle-btn.png" class="togglebtn"></button>
+        </div>
+		<p id="welcome-msg">Welcome to UzhavuMeeeptu, the new era of Agriculture</p>	
+			<img src= "WelcomeUnderline.png" class="WelcomeUnderline"> 
+			<a id="howtobuy" href="https://pub-f42e65e23ebb492b92951c349da084c1.r2.dev/UVM_How to Buy.pdf" target="_blank">
+				How To Buy?
+				</a>
+	   <div id="indexcont01" class="index-content fade-in">	
+		<div id="UVMKural1">
+			<img src="UVMKural1.png" class="Kural1-image">
+		</div>
+		<img src="valluvar.png" class="valluvar-image">
+		<div id="KuralExp">
+			<p>- Thiruvalluvar<br><br>
+			<b style="font-size: 1.05em; font-weight: 400;">This couplet from the famous Thirukkural of the Tamil language speaks about the importance of agriculture meaning : <br>"Those Who live by the plow live high, Because others have to live off them"</b></p>
+		</div>
+	</div>
+	
+	<div id="indexcont02" class="index-content fade-out">
+		<img src="socrates.png" class="socrates-image">
+		<div id="SocratesExp">
+			<p><b style="font-size: 1.05em; font-weight: 400;">"Nobody is qualified to become a statesman who is entirely ignorant of the problem of wheat."</b><br><br>
+			- Socrates<br><br>
+			<b style="font-size: 1.05em; font-weight: 400;">Socrates continuously stressed upon to study the relation between the Human Society and Agriculture, to unravel the natures' mystery about Environment and Foods.</b> 
+			</p>
+		</div>
+	</div>
+	
+	<div id="indexcont03" class="index-content fade-out">
+		<img src="confucius.png" class="confucius-image">
+		<div id="confuciusExp">
+			<p><b style="font-size: 1.05em; font-weight: 400;">"If you are planning for a year, sow rice; if you are planning for a decade, plant trees; if you are planning for a lifetime, educate people about agriculture."</b><br><br>
+			- Confucius<br><br>
+			<b style="font-size: 1.05em; font-weight: 400;">Confucian philosophy strongly believes that food and friends are inseparable parts of life. A life without food and friends is considered as incomplete and improper.</b>
+			</p>
+		</div>
+	</div>
+	
+	<div id="indexcont04" class="index-content fade-out">
+		<img src="jefferson.png" class="jefferson-image">
+		<div id="jeffersonExp">
+			<p><b style="font-size: 1.05em; font-weight: 400;">"Agriculture is our wisest pursuit, because it will in the end contibute most to real wealth, good morals, and happiness."</b><br><br>
+			- Thomas Jefferson<br><br>
+			<b style="font-size: 1.05em; font-weight: 400;">Jefferson considered himself a farmer. In 1795, he said, "I am entirely a farmer, soul and body, never scarcely admitting a sentiment on any other subject."</b>
+			</p>
+		</div>
+	</div>
+	
+	<div id="indexcont05" class="index-content fade-out">
+		<img src="masanobu.png" class="masanobu-image">
+		<div id="masanobuExp">
+			<p><b style="font-size: 1.05em; font-weight: 400;">"The Ultimate goal of farming is not the growing of crops, but the cultivation and perfection of human beings."</b><br><br>
+			- Masanobu Fukuoka<br><br>
+			<b style="font-size: 1.05em; font-weight: 400;">Fukuoka saw farming not just as a means of producing food but as an aesthetic and spiritual approach to life.</b>
+			</p>
+		</div>
+	</div>
+	
+
+		<div id="headContainer">
+		  <div id="countdown">
+			<div class="countdown-item">
+			  <span class="countdown-number" id="days"></span>
+			  <span class="countdown-label" id="daylabel">Days</span>
+			</div>
+			<div class="countdown-item">
+			  <span class="countdown-number" id="hours"></span>
+			  <span class="countdown-label" id="hourlabel">Hours</span>
+			</div>
+			<div class="countdown-item">
+			  <span class="countdown-number" id="minutes"></span>
+			  <span class="countdown-label" id="minutelabel">Minutes</span>
+			</div>
+			<div class="countdown-item">
+			  <span class="countdown-number" id="seconds"></span>
+			  <span class="countdown-label" id="secondlabel">Seconds</span>
+			</div>
+		  </div>
+
+			<label for="usdToSpend">Enter Amount to Buy (USD):</label>
+			<input type="number" id="usdToSpend" name="usdToSpend" min="1" value="0">
+			<p id="bnbToBuy"></p>
+			<p id="tokensToBuy"></p><br>
+			<p id="ICO1Price">Price per token</p><br>
+			<p id="ICO1PriceBNB"></p>
+			<p id="ICO1PriceUSD">$ 0.0015</p>
+            <p id="ICO1Balance"></p>
+			<p id="ICO1TimeLeft">Time left for ICO phase 01 end !!</p>
+			<p id="token-address">
+					<span id="token-ad"  style="font-size: .85em">Contract Address :</span>
+					<img src = "Copy-Icon.png" id = "header-copy"> <br>
+					<b style="font-size: 1em; cursor: pointer;"><span class="head-add-hoverable">
+						0x8c3d868A6e683De4006Bb9E07fb452aDDFcF3784 </b></span><br>
+						<span id="cont-disc" style="font-size:0.85em; font-style:italic; opacity: 0.6;">
+				         Do not send any funds to this address, it may get lost.
+						 </span>
+					</style>
+				</p>
+		  <div class="progress-bar-container">
+			<div id="progress-bar" class="progress-bar"></div>
+		  </div>
+		  
+		  <button id="connect-button">Connect Wallet</button>
+
+		  <button id="buyToken">Buy Now</button>
+			<div id="BuyModal" class="modal" style="display: none">
+  				<div class="modal-content">
+   				 <p>This project is now in ICO phase. Please read the provided documents carefully before investing.</p>
+  				  <button id="continueButton">Continue</button>
+  				</div>
+			</div>
+		 </div>	  
+
+		</section>
+	
+		<section id="home">
+
+			<div id="homebg-box"></div>
+			<img src="hometitlebg.png" id="hometitlebg">
+			<div id="homebox1title">UzhavuMeetpu</div>
+		  <div id="homebox1">
+			<div id="homeimage1">
+				<img src="BlockIntegrate.png" class="homeimage01">
+				</div>
+			<div id="homeCont01">
+			<h2>Our Ultimate goal is to build an ecosystem that bridges the gap between agriculture and Blockchain Technology.</h2><br><br>
+			</div>
+			<div id="homeCont01list">
+			<ul>
+				<li>Our Ecosystem will enable farmers to transition from traditional farming methods to digitized farming techniques which helps them with increase in overall profits.</li><br><br>
+			   <li>UzhavuMeetpu agricultural ecosystem stands out from already exisiting digitized farming techniques by focusing on the crop production process rather than pre-production and post production processes like SCM.</li>
+		     </ul>
+			</div>
+		  </div>
+		  <div id="homebox2title">The Ecosystem</div>
+		  <div id="homebox2">
+		<div id="homeimage2">
+			<img src="CropTechImage.png" class="homeimage02">
+			</div>
+			<div id="homeCont02">
+				<h2>The Ecosystem will be built by integrating Blockchain Technology into Agricultural production process.</h2><br><br>
+				</div>
+				<div id="homeCont02list">
+				<ul>
+				   <li>Building the UzhavuMeeptu Ecosystem involves implementation of Drone technology as the first phase, to directly increase the farmers' profits by decreasing the production cost and increase crop yield rate.</li><br><br>
+				  <li>The Second phase involves implementation of an array of IoT sensors in the crop fields to collect precise ground and atmospheric data that will result in better yield results and also aid in involving Government support schemes.</li>
+				</ul>
+			</div>
+		  </div>
+		<div id="homebox3title">The D-App</div>
+		<div id="homebox3">
+		  <div id="homeimage3">
+			  <img src="D-app.png" class="homeimage03">
+			  </div>
+			  <div id="homeCont03">
+				  <h2>We are building a Decentralized Application that will act as the heart and brain of the entire UzhavuMeetpu Ecosystem.</h2><br><br>
+				  </div>
+				  <div id="homeCont03list">
+				  <ul>
+					 <li>The D-App will collect, store, analyze, publish and utilize every data collected from the agricultural fields through the IoT sensors and Drones.</li><br><br>
+					<li>Anybody such as token holders, farmers, researchers, investors will be given complete access to the D-App, to buy, invest, research, implement and adopt the farming methods defined after verifying authentic ground results.</li>
+				  </ul>
+			  </div>
+			  </div>	
+			  <div id="homebox4title">Token Utility</div>
+	    <div id="homebox4">
+			<div id="homeimage4">
+					<img src="tokenUtility.png" class="homeimage04">
+					</div>
+					<div id="homeCont04">
+						<h2>The token and the D-App will operate on BNB smart chain. BSC is chosen owing to its scalability, transparency and upgradability.</h2><br><br>
+						</div>
+						<div id="homeCont04list">
+						<ul>
+						   <li>The initial Utility for the UVM token is gaining access to the D-App. Every data point embeded in the D-App as well as the IoT & drones sensors will able to be accessed only through the token smart contract </li><br><br>
+						  <li>The internal mechanism of the smart contract involves multiple contract interaction handling, which will be spreaded among the investors, farmers and token holders.</li>
+						</ul>
+					</div>
+					</div>	  
+
+		<div id="homeValueTitle">Our Key Objectives</div>			
+			
+		    <div id="homeValue01">
+			  <div id="homeValue01bg"></div>
+				<b id="homeValue01Title"><b style="font-size: 1.35em;">For Farmers</b><img src="FarmerValue.png" id="farmerValue-img"></b>
+				 <b id="homeValue01clicker">Click to Know more</b>
+				  <div id="homeValue01cont">
+					By integrating with UzhavuMeetpu any farmers will be able to receive the following benefits :
+					<ul>
+						<li>Increase in Net profit per acre by <b>28%</b> per harvest season</li>
+						<li>Overall reduction in input cost by a margin of <b>Rs. 24,000</b> per year</li>
+						<li>Reduction in Manual labour cost</li>
+						<li>Reduction in manual labour error / discrepancy</li>
+						<li>Decrease in Input Cost, by reducing fertilizer input volume</li>
+						<li>Improvisation of crop quality, by reducing pesticide input volume</li>
+						<li>Considerable reduction in time of harvest cycle</li>
+						<li>Decrease in carbon foot print per acre</li>
+						<li>Increase in the soil nutrition level</li>
+						<li>Decrease in wastage of water during harvest season</li>
+					</ul>
+			      </div>
+			</div>
+			<div id="homeValue02">
+				<div id="homeValue02bg"></div>
+				  <b id="homeValue02Title"><b style="font-size: 1.35em;  display: inline-block; white-space: nowrap;">For Partners</b><img src="FarmerValue02.png" id="farmerValue02-img"></b>
+				   <b id="homeValue02clicker">Click to Know more</b>
+					<div id="homeValue02cont">
+						After thorough market analysis, we are proud to announce that our D-App features and Nodal network implementation are unparalleled by any other Agri-Tech company, Following are some unique features of UzhavuMeetpu :
+					  <ul>
+						  <li>UzhavuMeetpu will be the first ever Crypto project to natively integrate Blockchain into Agriculture.</li>
+						  <li>UzhavuMeetpu will provide a chance for everybody from farmers to agricultural & blockchain enthusiasts to contribute for collective growth in the agricultural sector along with an opportunity to earn profits by all the participants of the project.</li>
+						  <li>UzhavuMeetpu will emerge as the biggest Agri-Tech company in terms of farm field area coverage, and product sales wise market absorption.</li>
+						  <li>Our Ecosystem will be the biggest, elegant, most easy to access and one with the maximum level of connectivity among the farmers.</li>
+						  <li>UzhavuMeetpu Drones are best in class, with the easiest user access and the most affordable in terms of cost per acre. </li>
+						  <li>Any exisiting Agri-Tech company can simply partner-up with UzhavuMeetpu in our journey to become the largest agri based Blockchain company in the world.</li>
+					  </ul>
+					</div>
+			  </div>
+			  <div id="homeValue03">
+				<div id="homeValue03bg"></div>
+				  <b id="homeValue03Title"><b style="font-size: 1.35em;  display: inline-block; white-space: nowrap;">For Investors</b><img src="FarmerValue03.png" id="farmerValue03-img"></b>
+				   <b id="homeValue03clicker">Click to Know more</b>
+					<div id="homeValue03cont">
+						UzhavuMeeeptu is entering the global market in a time of global financial crunch. Thus providing better oppurtunities for investors of all kinds. Some of the Key factors for investors to look upon are listed below :
+					  <ul>
+						  <li>Market absorption rate for Agri-Tech products is very high today.</li>
+						  <li>Our product affordability cost wise, ensures multifold increase in market share.</li>
+						  <li>With a limited profit margin per product UzhavuMeetpu focuses on overall profit turnout on a volume basis.</li>
+						  <li>Our D-App ensures higher participation rate from all aspects of the common population.</li>
+						  <li>Since UVM Tokens acts as a access token for the UVM D-App the token demand will always be on a bull run. </li>
+						  <li>On listing UVM Tokens will achieve a minimal Market Capitalization Value of <b>20 Million USD</b>.</li>
+						  <li>Investors of any kind are welcome to contact us through our official channels to know more about the exact technical specs and other financial data of UzhavuMeetpu</li>
+					  </ul>
+					</div>
+			  </div>
+			  <div id="homeValue04">
+				<div id="homeValue04bg"></div>
+				  <b id="homeValue04Title"><b style="font-size: 1.35em;  display: inline-block; white-space: nowrap;">For Token Holders</b><img src="FarmerValue04.png" id="farmerValue04-img"></b>
+				   <b id="homeValue04clicker">Click to Know more</b>
+					<div id="homeValue04cont">
+						UVM is the best utility & access token available in the market currently, forget chasing Meme and Hype tokens, UzhavuMeeptu tokens will be the best token to HODL in your portfolio :
+					  <ul>
+						  <li>UVM tokens are available through ICO (Initial Coin Offering) split into 2 phases currently.</li>
+						  <li>UVM tokens are planned to hit all the major token listing platforms & DEX's (Decentralized EXchanges) in January'2024.</li>
+						  <li>The price of the UVM Tokens is ensured to enter a never ending bull run owing to the demand it will have in the market due to the Utility it has in the native Application.</li>
+						  <li>Buying UVM Tokens at a discounted price during the ICO phases today is the best thing you can do to add value to your crypto portfolio.</li>
+					  </ul>
+					</div>
+			  </div>
+			  <div id="homeValue05">
+				<div id="homeValue05bg"></div>
+				  <b id="homeValue05Title"><b style="font-size: 1.35em;  display: inline-block; white-space: nowrap;">For Tech Geeks</b><img src="FarmerValue05.png" id="farmerValue05-img"></b>
+				   <b id="homeValue05clicker">Click to Know more</b>
+					<div id="homeValue05cont">
+						UzhavuMeetpu will act as a bridge between 2 entirely different sectors :
+					  <ul>
+						Crop Fields :
+						  <li>Our Drones are made at an affordable price due to usage of very limited number of onboard components.</li>
+						  <li>UVM Drones are designed & built adopting ASIC (Application Specific Integrated Circuits) concept of electronic gadgets. They cannot be used for anyother purpose other than use cases in crop fields</li>
+						  <li>Drones can be controlled using a simple car audio system sized (IR) based Remote. No complexity involved in operation of the drone</li>
+						  <li>The IoT sensors and Drones use LoRA a new age communication technology to establish network access to Blockchain, specifiaclly to our UVM D-App.</li>
+					  </ul>
+					  <ul>
+						Blockchain :
+						  <li>The D-App will be based on a multiple source smart contract operation method.</li>
+						  <li>We are re-defining D-App access for smart contract interactions by providing with external volunteer based shared smart contract access.</li>
+						  <li>Since there is a physical product to gather and feed the Data to D-App the block build method can be accessed through approved smart contracts from multiple origins, thus ensuring connectivity and uninterrupted access</li>
+						  <li>The Data collected from the crop fields will be a very new set of data that has not yet been gathered or accessed by anybody else. Hence this data is considered to be rich data that will be processed by our Data- Modelling applications to present the data to strategic clients / partners such as insurance providers, government, NBFC's, educational institutions, etc.</li>
+					  </ul>
+					</div>
+			  </div>
+         <div id="achievements">Achievements made</div> 
+		  <div id="onBoard" class="achv-container">
+			<span class="farmerNum">0</span>
+			<Span class="plus">+</Span>
+			<h3 class="achv">Farmers Onboarded</h3>
+		 </div>
+		  <div id="area" class="achv-container">
+			<span class="coveredArea">0</span>
+			<Span class="plus">+</Span>
+			<h3 class="achv">Acres Digitised</h3>
+		  </div>
+		  <div id="fertilizer" class="achv-container">
+			<span class="reducefertilizer">0</span>
+			<Span class="plus">+</Span>
+			<h3 class="achv">Kg of Fertilizer usage reduced</h3>
+		  </div>
+		  <div id="electricity" class="achv-container">
+			<span class="reduceElec">0</span>
+			<Span class="plus">+</Span>
+			<h3 class="achv">MWh Electricity Saved</h3>
+		  </div>
+		  <div id="yield" class="achv-container">
+			<span class="yieldIncrease">0</span>
+			<Span class="plus">+</Span>
+			<h3 class="achv">Kg of inrease in Yield</h3>
+		  </div>
+		  <div id="profit" class="achv-container">
+			<span class="profitIncrease">0</span>
+			<Span class="plus">+</Span>
+			<h3 class="achv">Profit Increase for Farmers</h3>
+		  </div>
+
+		  <b id="image-scroll2-title">Startegic Partnerships</b>
+		  <div class="image-scroll-wrapper2">
+		   <div class="image-scroll-container2">
+			  <img src="./Marque2Images/marque2img1.png" alt="Image 1">
+			  <img src="./Marque2Images/marque2img2.png" alt="Image 2">
+			  <img src="./Marque2Images/marque2img3.png" alt="Image 3">
+			  <img src="./Marque2Images/marque2img4.png" alt="Image 4">
+			  <img src="./Marque2Images/marque2img5.png" alt="Image 5">
+			  <img src="./Marque2Images/marque2img6.png" alt="Image 6">
+			  <img src="./Marque2Images/marque2img7.png" alt="Image 7">
+			  <img src="./Marque2Images/marque2img8.png" alt="Image 8">
+			  <img src="./Marque2Images/marque2img9.png" alt="Image 9">
+			  <img src="./Marque2Images/marque2img10.png" alt="Image 10">
+			  <img src="./Marque2Images/marque2img11.png" alt="Image 11">
+			  <img src="./Marque2Images/marque2img12.png" alt="Image 12">
+			  <img src="./Marque2Images/marque2img1.png" alt="Image 1">
+			  <img src="./Marque2Images/marque2img2.png" alt="Image 2">
+			  <img src="./Marque2Images/marque2img3.png" alt="Image 3">
+			  <img src="./Marque2Images/marque2img4.png" alt="Image 4">
+			  <img src="./Marque2Images/marque2img5.png" alt="Image 5">
+			  <img src="./Marque2Images/marque2img6.png" alt="Image 6">
+			  <img src="./Marque2Images/marque2img7.png" alt="Image 7">
+			  <img src="./Marque2Images/marque2img8.png" alt="Image 8">
+			  <img src="./Marque2Images/marque2img9.png" alt="Image 9">
+			  <img src="./Marque2Images/marque2img10.png" alt="Image 10">
+			  <img src="./Marque2Images/marque2img11.png" alt="Image 11">
+			  <img src="./Marque2Images/marque2img12.png" alt="Image 12">
+		   </div>  
+		  </div>		  
+
+		</section>
+
+		<section id="tokenomics">
+			<div id ="tokenbgbox"></div>
+			<h2 id="tokenomicstitle">Tokenomics</h2>
+			<div id="tokenomicsCont">
+				<div id="tokenomics1">
+					<h3>Product Development</h3>
+				</div>
+					<div id="tokenomics1exp">
+                      <p><b>37%</b> : The majority of the tokens contribution will be utilized for product development</p>
+					</div>
+				<div id="tokenomics2">
+					<h3>Locked Liquidity</h3>
+				</div>
+					<div id="tokenomics2exp">
+                      <p><b>23.6%</b> : A fair share of the total token circulation will be locked against liquidity for a period of 36months from token listing</p>
+					</div>
+				<div id="tokenomics3">
+					<h3>D-App Development</h3>
+				</div>
+					<div id="tokenomics3exp">
+                      <p><b>14%</b> : The D-App will be developed in the phase 03 of the project with the value built by the token</p>
+					</div>
+				<div id="tokenomics4">
+					<h3>Liquidity Pool</h3>
+				</div>
+					<div id="tokenomics4exp">
+                      <p><b>12.8%</b> : To maintain the fair value of the token a corresponding share from token sales will be directed towards liquidity pool</p>
+					</div>
+				<div id="tokenomics5">
+					<h3>Promoters Share</h3>
+				</div>
+					<div id="tokenomics5exp">
+                      <p><b>8%</b> : After utilities a share of the token value will be rewarded back to early promoters and investors</p>
+					</div>
+				<div id="tokenomics6">
+					<h3>Team Share</h3>
+				</div>
+					<div id="tokenomics6exp">
+                      <p><b>4.6%</b> : After all the utilities and contributions a very little value of the tokens is shared back to the initial Team members of the project</p>
+					</div>
+				<img src="Tokennomics.png" class="tokenecon"  id="tokenomicsImage">
+			    <img src="tokenomicsOne.png" class="tokenomicsOne">
+			    <img src="tokenomicsTwo.png" class="tokenomicsTwo">
+			    <img src="tokenomicsThree.png" class="tokenomicsThree">
+			    <img src="tokenomicsFour.png" class="tokenomicsFour">
+			    <img src="tokenomicsFive.png" class="tokenomicsFive">
+			    <img src="tokenomicsSix.png" class="tokenomicsSix">
+		    </div>
+			<p id="tokename">Name :<span id="namevalue"></span></p>
+            <p id="symbol">Symbol :<span id="symbolvalue"></span></p>
+            <p id="price">
+            <p id="totsupply">Total Supply :<span id="totsupplyvalue"></span></p>
+            <label for="tokensToBuy" style="display: none">Number of tokens to buy:</label>
+            <p style="display: none">ICO 1:</p>
+			<p id="listingPrice">Listing Price :  <b style="font-size: 1.20em; margin-left: 7px;"> 0.0020 USD</b></p>
+			<p id="mcap">M-Cap on Listing : <b style="font-size: 1.20em; margin-left: 7px;"> 20,000,000 USD</b></p>
+            <p id="ICO1Start" style="display: none"></p>
+            <p id="ICO1End"style="display: none"></p>
+            <p id="ICO1Supply"style="display: none"></p>
+            <p id="ICO1Price"style="display: none"></p>
+            <p id="ICO1Balance"style="display: none"></p>
+            <p style="display: none">ICO 2:</p>
+            <p id="ICO2Start"style="display: none"></p>
+            <p id="ICO2End"style="display: none"></p>
+            <p id="ICO2Supply"style="display: none"></p>
+            <p id="ICO2Price"style="display: none"></p>
+		</section>
+
+		<section id="roadmap">
+			<div id="roadmap-title">Roadmap</div>
+			<p id="roadmapExp">This roadmap highlights the journey of Uzhavumeetpu from its inception to the current stage, showcasing the progress made in developing the technology, conducting an ICO, establishing partnerships, and implementing the project's solutions in agriculture, for the near and foreseeable future.</p>
+			<div id="roadmapbg-box"></div>
+			<div id="Roadmap1">
+				<img src="Roadmap01.png" class="Roadmap01">
+				</div>
+		</section>
+
+		<section id="whitepaper">
+			<div id="whitepaperbg"></div>
+			<div id="wp-title">Documentation</div>
+			<div class="background-box"></div>
+			<p id="wpexp">Our team at UzhavuMeetpu conducted thorough research for our product implementation and market absorption analysis before coming up with the product design, project implementation process and Crypto Token dynamics, We have mentioned about all our research and observations in our Whitepaper for the UzhavuMeetpu token.</p>
+			<p id="wpexp01">To know more about the token workings and about the researches - we conducted, please click on the document to view and download the whitepaper.</p>
+			<a href="https://pub-f42e65e23ebb492b92951c349da084c1.r2.dev/UVM_WhitePaper.pdf" target="_blank">
+				<img src="Whitepaper.png" id="wplink" alt="Image Link">
+			  </a>
+			  
+		</section>
+
+		<section id="footer">
+
+			<div id="footer-title">
+				<img src="footer-logo.png" id="footer-logo">
+			</div>
+			<p id="footerNote">Our ultimate vision with UzhavuMeetpu is to turn agriculture into an organized production sector</p>
+			<div id="footer-mail">
+				<b>Connect with Us :</b><br><br>services@uzhavumeetpu.com<br><br>helpdesk@uzhavumeeptu.com
+			</div>
+			<div id="footer-social">
+				<a href="https://t.me/UzhavuMeetpu" target="blank">
+					<img src="telegram.png" id="telegram">
+				</a>
+				<a href="https://instagram.com/cybermatic_customs?igshid=MTIyMzRjYmRlZg==" target="blank">
+					<img src="Insta.png" id="insta">
+				</a>
+				<a href="https://twitter.com/UzhavuMeetpu" target="blank">
+					<img src="twitter.png" id="twitter">
+				</a>
+				<a href="https://discord.gg/6cZUuRPXAQ" target="blank">
+					<img src="discord.png" id="discord">
+				</a>
+			</div>
+			<b id="ccslinkTitle">Powered By,</b>
+			<a href="https://ccs.com" target="blank">
+			  <img src="ccslogo.png" id="ccslink">
+			   </a>
+
+			<div id="footer-company"><b>Company</b><br><br>
+				<a href="#whitepaper" id="footerwp">Whitepaper</a><br><br>
+			    <a href="#aboutus" id="footerteam">About Us</a>
+			</div>
+
+			<div id="footer-docs"><b>Legal</b><br><br>
+					<a href="https://pub-f42e65e23ebb492b92951c349da084c1.r2.dev/UVM_T%26C.pdf" target="_blank" id="terms">Terms and Conditions</a><br><br>
+					<a href="https://pub-f42e65e23ebb492b92951c349da084c1.r2.dev/UVM_RISK POLICY.pdf" target="_blank" id="risk">Risk policy and Disclaimer</a><br><br>
+					<a href="https://pub-f42e65e23ebb492b92951c349da084c1.r2.dev/UVM_Privacy Policy.pdf" target="_blank" id="policy">Privacy Policy</a><br><br>
+					<a href="https://pub-f42e65e23ebb492b92951c349da084c1.r2.dev/UVM_How to Buy.pdf" target="_blank" id="foothowtobuy">How To Buy?</a>
+			</div>
+
+			<div id="footer-pointer">
+				<p id="cont-address">
+					Contract Address<br><b style="font-size: 1.25em; cursor: pointer;"><span class="foot-add-hoverable">
+						0x8c3d868A6e683De4006Bb9E07fb452aDDFcF3784</b></span><img src = "Copy-Icon.png" id = "footer-copy"><br>
+						<span id="cont-disc" style="font-size: 14px; font-style:italic; opacity: 0.6;">
+				         Do not send any funds to this address, it may get lost.
+					  </span>
+					</style>
+				</p>
+					<p id="cont-symbol">Symbol<br><b>UVM</b></p>
+					<p id="cont-decimal">Decimal<br><b>8</b></p>
+					<p id="cont-network">Network<br><b>BNB Smart Chain</b></p>
+					<p id="cont-supply">Supply<br><b>10,000,000,000</b></p>
+			</div>
+
+			<div class="image-scroll-wrapper">
+			    <div class="image-scroll-container">
+			    	<img src="./MarqueImages/marqueimg01.png" alt="Image 1">
+				    <img src="./MarqueImages/marqueimg02.png" alt="Image 2">
+				    <img src="./MarqueImages/marqueimg03.png" alt="Image 3">
+				    <img src="./MarqueImages/marqueimg04.png" alt="Image 4">
+				    <img src="./MarqueImages/marqueimg05.png" alt="Image 5">
+				    <img src="./MarqueImages/marqueimg06.png" alt="Image 6">
+				    <img src="./MarqueImages/marqueimg07.png" alt="Image 7">
+				    <img src="./MarqueImages/marqueimg08.png" alt="Image 8">
+				    <img src="./MarqueImages/marqueimg09.png" alt="Image 9">
+					<img src="./MarqueImages/marqueimg01.png" alt="Image 1">
+				    <img src="./MarqueImages/marqueimg02.png" alt="Image 2">
+				    <img src="./MarqueImages/marqueimg03.png" alt="Image 3">
+				    <img src="./MarqueImages/marqueimg04.png" alt="Image 4">
+				    <img src="./MarqueImages/marqueimg05.png" alt="Image 5">
+				    <img src="./MarqueImages/marqueimg06.png" alt="Image 6">
+				    <img src="./MarqueImages/marqueimg07.png" alt="Image 7">
+				    <img src="./MarqueImages/marqueimg08.png" alt="Image 8">
+				    <img src="./MarqueImages/marqueimg09.png" alt="Image 9">
+			    </div>
+			  </div>
+
+			  <div id="footer-copyright">
+				&copy 2023 UzhavuMeeeptu  ||  All rights reserved.
+			</div>
+		</section>
+	</main>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.5.0/web3.min.js"></script>
+	<script src="./app.js"></script>
+</body>
+</html>
